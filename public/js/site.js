@@ -8,6 +8,23 @@
 /***/ (() => {
 
 // This is all you.
+// Selection of HTML objects
+var burger = document.querySelector('.burger');
+var burgerOpen = document.querySelector('#burgerOpen');
+var burgerClosed = document.querySelector('#burgerClosed');
+var nav = document.querySelector('.nav'); // Defining a function
+
+function toggleNav() {
+  nav.classList.toggle('hidden');
+} // Calling the function after click event occurs
+
+
+burgerOpen.addEventListener('click', function () {
+  toggleNav();
+});
+burgerClosed.addEventListener('click', function () {
+  toggleNav();
+});
 
 /***/ }),
 
