@@ -1,0 +1,86 @@
+<div class="lg:overflow-hidden lg:pt-8 lg:pb-14">
+    <!-- Subpage header -->
+    <div class="max-w-4xl mx-auto px-4 lg:px-0">
+        <div class="flex items-center">
+            <div class="relative border-2 border-black py-2 px-2 -rotate-2 z-10">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="relative w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z" />
+                </svg>
+            </div>
+            <h1 class="ml-4 text-3xl font-semibold">Experimentation Events</h1>
+        </div>
+    </div>
+
+    <!-- Resource Collection -->
+    <div class="max-w-4xl mx-auto">
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-10 px-4 lg:px-0">
+            {{ collection from="events" }}
+            <div class="">
+                <img src="{{ glide:cover preset='thumbnail' }}" alt="" class="w-full bg-blue-200 rounded">
+                <h3 class="mt-2 text-2xl font-semibold">{{ title }}</h3>
+                <p class="mt-2.5 text-md text-gray-700">{{ content }}</p>
+                <a href="{{ link }}" target="_blank" class="inline-block mt-2.5 font-semibold">Learn more</a>
+            </div>
+            {{ /collection }}
+        </div>
+    </div>
+
+    <!-- Subsection Header -->
+    <div class="mt-16 max-w-4xl mx-auto px-4 lg:px-0">
+        <div class="max-w-md">
+            <h2 class="mt-2 text-2xl font-semibold">All events in 2022 and 2023</h2>
+            <p class="mt-2.5 text-md text-gray-700">Not sure what events to go to yet? Check it out here:</p>
+        </div>
+        <div class="mt-8 flex flex-col">
+            <div class="overflow-x-auto">
+                <div class="inline-block min-w-full py-2 align-top">
+                    <table class="min-w-full divide-y divide-gray-300 table-fixed">
+                        <thead>
+                        <tr>
+                            <th scope="col" class="py-3.5 pl-0 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6 md:pl-0">Name</th>
+                            <th scope="col" class="py-3.5 px-3 text-left text-sm font-semibold text-gray-900">When?</th>
+                            <th scope="col" class="py-3.5 px-3 text-left text-sm font-semibold text-gray-900">Location</th>
+                        </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                        {{ collection from="events" }}
+                        <tr>
+                            <td class="align-top whitespace-nowrap py-4 pl-0 pr-3 text-sm font-medium text-gray-900 sm:pl-6 md:pl-0">
+                                <a href="{{ link }}" target="_blank">{{ title }}</a>
+                            </td>
+                            <td class="align-top whitespace-nowrap py-4 px-3 text-sm text-gray-500">{{ date_from format="d. M. 'y" }} {{ if date_to }} – {{ date_to format="d. M. 'y" }} {{ /if }}</td>
+                            <td class="align-top whitespace-nowrap py-4 px-3 text-sm text-gray-500">{{ location }}</td>
+                        </tr>
+                        {{ /collection }}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- E-Mail Signup -->
+    <div class="mt-20 mx-auto max-w-3xl px-2 lg:px-8">
+        <div class="w-full">
+            <div class="relative mt-px w-full border-2 border-black bg-white py-4 px-4">
+                <span class="absolute -top-3 bg-yellow-500 px-2 py-.5 text-sm">CRO Read of the Year 2022</span>
+                <h2 class="mt-1 text-xl md:text-2xl font-semibold">Get 6 new tips in your inbox every Tuesday</h2>
+                <form action="" class="mt-2 flex space-x-4 items-end">
+                    <div class="w-full">
+                        <label for="name" class="text-sm">Name</label>
+                        <input id="name" type="text" placeholder="What do you want me to call you?" class="w-full block border border-black py-1 px-2 placeholder:text-sm">
+                    </div>
+                    <div class="w-full">
+                        <label for="email" class="text-sm">E-Mail</label>
+                        <input id="email" type="text" placeholder="Where can I reach you? (email)" class="w-full block border border-black py-1 px-2 placeholder:text-sm">
+                    </div>
+                    <div class="flex-shrink-0">
+                        <button type="submit" class="bg-yellow-500 border-2 border-black box-border px-2 py-1 font-medium">Yes please :)</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+<article class="">
+    {{ content | widont }}
+</article>

@@ -38,6 +38,45 @@
     <!-- Subsection Header -->
     <div class="mt-16 max-w-4xl mx-auto px-4 lg:px-0">
         <div class="max-w-md">
+            <h2 class="mt-2 text-2xl font-semibold">All Resources</h2>
+            <p class="mt-2.5 text-md text-gray-700">Find a helpful list of all resources here... soon you'll be able to sort as well</p>
+        </div>
+        <div class="mt-8 flex flex-col">
+            <div class="overflow-x-auto">
+                <div class="inline-block min-w-full py-2 align-top">
+                    <table class="min-w-full divide-y divide-gray-300 table-fixed">
+                        <thead>
+                        <tr>
+                            <th scope="col" class="py-3.5 pl-0 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6 md:pl-0">Name</th>
+                            <th scope="col" class="py-3.5 px-3 text-left text-sm font-semibold text-gray-900">Type</th>
+                            <th scope="col" class="py-3.5 px-3 text-left text-sm font-semibold text-gray-900">Description</th>
+
+                        </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                        {{ collection from="resources" }}
+                        <tr>
+                            <td class="align-top whitespace-nowrap py-4 pl-0 pr-3 text-sm font-medium text-gray-900 sm:pl-6 md:pl-0">
+                                {{ if type == "link" }}
+                                <a href="{{ link }}">{{ title }}</a>
+
+                                {{ /if }}
+
+                            </td>
+                            <td class="align-top whitespace-nowrap py-4 px-3 text-sm text-gray-500">{{ type }}</td>
+                            <td class="align-top whitespace-nowrap py-4 px-3 text-sm text-gray-500"><div class="truncate">{{ content }}</div></td>
+                        </tr>
+                        {{ /collection }}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Subsection Header -->
+    <div class="mt-16 max-w-4xl mx-auto px-4 lg:px-0">
+        <div class="max-w-md">
             <h2 class="mt-2 text-2xl font-semibold">Tools</h2>
             <p class="mt-2.5 text-md text-gray-700">The event series of meetups where like-minded people in the realm of CRO meet, exchange ideas and have fun. </p>
         </div>

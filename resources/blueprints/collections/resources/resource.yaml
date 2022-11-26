@@ -10,6 +10,17 @@ sections:
           validate:
             - required
       -
+        handle: featured
+        field:
+          default: false
+          display: Featured
+          type: toggle
+          icon: toggle
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
         handle: content
         field:
           type: markdown
