@@ -12,10 +12,12 @@
 var burger = document.querySelector('.burger');
 var burgerOpen = document.querySelector('#burgerOpen');
 var burgerClosed = document.querySelector('#burgerClosed');
-var nav = document.querySelector('.nav'); // Defining a function
+var nav = document.querySelector('.nav');
+var body = document.querySelector('body'); // Defining a function
 
 function toggleNav() {
   nav.classList.toggle('hidden');
+  body.classList.toggle('fixed');
 } // Calling the function after click event occurs
 
 
