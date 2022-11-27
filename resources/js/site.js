@@ -9,7 +9,7 @@ const body = document.querySelector('body');
 // Defining a function
 function toggleNav() {
     nav.classList.toggle('hidden');
-    body.classList.toggle('fixed');
+    body.classList.toggle('overflow-hidden');
 }
 // Calling the function after click event occurs
 burgerOpen.addEventListener('click', function() {

@@ -9,6 +9,7 @@
     </head>
     <body class="font-sans leading-normal text-gray-800">
     <header>
+        <!-- navigation -->
         <nav class="navbar mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Top">
             <div class="flex w-full items-center justify-between py-8">
                 <a href="/" class="relative px-2">
@@ -25,14 +26,14 @@
                 </button>
                 <div class="ml-10 hidden space-x-8 lg:block">
                     {{ nav:main_navigation }}
-                    <a href="{{ url }}" class="text-base font-medium before:hidden hover:before:block before:absolute before:h-4 before:w-full before:bottom-0 before:-rotate-2 before:bg-pink-300 relative inline-block">
+                    <a href="{{ url }}" class="text-base font-medium {{ if is_current || is_parent }}before:block {{ else }}before:hidden {{endif}}hover:before:block before:absolute before:h-4 before:w-full before:bottom-0 before:-rotate-2 before:bg-pink-300 relative inline-block">
                         <span class="relative ">{{ title }}</span>
                     </a>
                     {{ /nav:main_navigation }}
                 </div>
             </div>
         </nav>
-        <!-- mobile navigation -->
+        <!-- Mobile navigation layer -->
         <div class="nav hidden md:hidden absolute top-0 z-50 bg-white w-full px-4 sm:px-6 h-full">
             <div class="flex w-full items-center justify-between py-8">
                 <a href="/" class="relative px-2">

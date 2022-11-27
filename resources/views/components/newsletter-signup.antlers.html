@@ -1,0 +1,50 @@
+<div class="mx-auto mt-20 max-w-3xl px-2 lg:px-8">
+  <div class="w-full">
+    <div id="newsletter-signup" class="relative mt-px w-full border-2 border-black bg-white py-4 px-4">
+      <span class="py-.5 absolute -top-3 bg-yellow-500 px-2 text-sm">CRO Read of the Year 2022</span>
+      <h2 class="mt-1 text-xl font-semibold md:text-2xl">Get 6 new tips in your inbox every Tuesday</h2>
+      <form
+        method="POST"
+        action="https://app.convertkit.com/forms/3817467/subscriptions"
+      >
+        <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
+
+        <div class="formkit-fields mt-2 items-end space-y-4 md:flex md:space-x-4 md:space-y-0">
+          <div class="formkit-field w-full">
+            <label for="name" class="text-sm">Name</label>
+            <input
+              type="text"
+              class="formkit-input block w-full border border-black py-1 px-2 placeholder:text-sm"
+              aria-label="First Name"
+              name="fields[first_name]"
+              placeholder="What do you want me to call you?"
+              required
+            />
+          </div>
+          <div class="formkit-field w-full">
+            <label for="email" class="text-sm">E-Mail</label>
+            <input
+              type="email"
+              class="formkit-input block w-full border border-black py-1 px-2 placeholder:text-sm"
+              name="email_address"
+              placeholder="Where can I reach you? (email)"
+              aria-label="Email Address"
+              required=""
+            />
+          </div>
+          <div class="flex-shrink-0">
+            <button class="formkit-submit box-border border-2 border-black bg-yellow-500 px-2 py-1 font-medium" data-element="submit">
+              <div class="formkit-spinner">
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+              <span>Yes please :)</span>
+            </button>
+          </div>
+        </div>
+        <div class="mt-2 text-xs text-gray-500"><p>100% free. Cancel with one click, anytime.</p></div>
+      </form>
+    </div>
+  </div>
+</div>

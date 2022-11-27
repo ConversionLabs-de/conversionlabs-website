@@ -1,0 +1,35 @@
+{
+  "singleQuote": true,
+  "trailingComma": "all",
+  "printWidth": 140,
+  "tabWidth": 2,
+  "endOfLine": "lf",
+  "plugins": [
+    "./node_modules/prettier-plugin-antlers/",
+    "./node_modules/prettier-plugin-blade/"
+  ],
+  "overrides": [
+    {
+      "files": "*.antlers.html",
+      "options": {
+        "parser": "antlers"
+      }
+    },
+    {
+      "files": "*.blade.php",
+      "options": {
+        "parser": "blade"
+      }
+    },
+    {
+      "files": [
+        "**/*.css",
+        "**/*.html",
+        "**/*.php"
+      ],
+      "options": {
+        "singleQuote": false
+      }
+    }
+  ]
+}
