@@ -891,6 +891,30 @@ video {
   background-color: rgb(241 239 227 / var(--tw-bg-opacity));
 }
 
+.bg-auto {
+  background-size: auto;
+}
+
+.bg-cover {
+  background-size: cover;
+}
+
+.bg-contain {
+  background-size: contain;
+}
+
+.bg-fixed {
+  background-attachment: fixed;
+}
+
+.bg-center {
+  background-position: center;
+}
+
+.bg-top {
+  background-position: top;
+}
+
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;

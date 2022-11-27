@@ -7,7 +7,7 @@ date_from: '2023-01-17'
 link: 'https://www.meetup.com/nl-NL/producttank-ams/'
 type: meetup
 location: 'Amsterdam, NL'
-cover: clean_504161140.jpeg
+cover: events/clean_504161140.jpeg
 updated_by: f24606d7-f5fe-459a-9fd4-9ae5db616d4c
 updated_at: 1669428240
 ---
