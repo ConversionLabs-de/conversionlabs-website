@@ -1,0 +1,63 @@
+<div class="lg:overflow-hidden lg:pt-8 lg:pb-14">
+  <!-- Subpage header -->
+  <div class="mx-auto max-w-4xl px-4 lg:px-0">
+    <div class="flex items-center">
+      <div class="relative z-10 border-2 border-black py-2 px-2">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"
+          />
+        </svg>
+      </div>
+      <h1 class="ml-4 text-3xl font-semibold">Experimentation & CRO Tools</h1>
+    </div>
+  </div>
+
+  <!-- Subsection Header -->
+  <div class="mx-auto mt-16 max-w-4xl px-4 lg:px-0">
+    <div class="max-w-md">
+      <h2 class="mt-2 text-2xl font-semibold">Tool landscape</h2>
+      <p class="text-md mt-2.5 text-gray-700">There are so many tools to choose from, here are a couple that stick out.</p>
+    </div>
+    <div class="mt-8 flex flex-col">
+      <div class="overflow-x-auto">
+        <div class="inline-block min-w-full py-2 align-top">
+          <table class="min-w-full table-fixed divide-y divide-gray-300">
+            <thead>
+              <tr>
+                <th scope="col" class="py-3.5 pl-0 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6 md:pl-0">Name</th>
+                <th scope="col" class="py-3.5 px-3 text-left text-sm font-semibold text-gray-900">Category</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+              {{ collection from="tools" sort="category" }}
+                <tr>
+                  <td class="whitespace-nowrap py-4 pl-0 pr-3 align-top text-sm font-medium text-gray-900 sm:pl-6 md:pl-0">
+                    <a href="{{ link }}" target="_blank" class="hover:underline" title="Check out {{ title }}">
+                      {{ title }}
+                    </a>
+                  </td>
+                  <td class="whitespace-nowrap py-4 px-3 align-top text-sm text-gray-500">
+                    <div class="truncate">{{ category.label }}</div>
+                  </td>
+                </tr>
+              {{ /collection }}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div>
+      <p>
+        <i>More tools and recommendations will be added soon as this site builds up.</i>
+      </p>
+    </div>
+  </div>
+
+  {{ partial:components/newsletter-signup }}
+  <article class="">
+    {{ content | widont }}
+  </article>
+</div>

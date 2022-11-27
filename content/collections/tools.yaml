@@ -1,5 +1,14 @@
 title: Tools
+template: default
+layout: layout
+mount: 2a4f747f-a16c-4e92-8fc5-1cb6d2e94044
 revisions: false
+route: '/tools/{slug}'
+sort_dir: asc
 date_behavior:
   past: public
   future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
