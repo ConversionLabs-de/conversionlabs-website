@@ -57,7 +57,87 @@
               {{ collection:events date_from:is_after="today" sort="date_from:asc" }}
                 <tr>
                   <td class="whitespace-nowrap py-4 pl-0 pr-3 align-top text-sm font-medium text-gray-900 sm:pl-6 md:pl-0">
-                    <a href="{{ link }}" target="_blank">{{ title }}</a>
+                    {{ if link }}
+                      <a href="{{ link }}" target="_blank" class="flex items-center hover:underline">
+                        {{ title }}
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          class="ml-1 h-3 w-3"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+                          />
+                        </svg>
+                      </a>
+                    {{ else }}
+                      {{ title }}
+                    {{ /if }}
+                  </td>
+                  <td class="whitespace-nowrap py-4 px-3 align-top text-sm text-gray-500">
+                    {{ date_from format="d. M. 'y" }}
+                    {{ if date_to }}
+                      –
+                      {{ date_to format="d. M. 'y" }}
+                    {{ /if }}
+                  </td>
+                  <td class="whitespace-nowrap py-4 px-3 align-top text-sm text-gray-500">{{ location }}</td>
+                </tr>
+              {{ /collection:events }}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Subsection Header -->
+  <div class="mx-auto mt-16 max-w-4xl px-4 lg:px-0">
+    <div class="max-w-md">
+      <h2 class="mt-2 text-2xl font-semibold">Past events</h2>
+      <p class="text-md mt-2.5 text-gray-700">Time flies and so did these experimentation events in 2022</p>
+    </div>
+    <div class="mt-8 flex flex-col">
+      <div class="overflow-x-auto">
+        <div class="inline-block min-w-full py-2 align-top">
+          <table class="min-w-full table-fixed divide-y divide-gray-300">
+            <thead>
+              <tr>
+                <th scope="col" class="py-3.5 pl-0 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6 md:pl-0">Name</th>
+                <th scope="col" class="py-3.5 px-3 text-left text-sm font-semibold text-gray-900">When?</th>
+                <th scope="col" class="py-3.5 px-3 text-left text-sm font-semibold text-gray-900">Location</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+              {{ collection:events date_from:is_before="today" sort="date_from:asc" }}
+                <tr>
+                  <td class="whitespace-nowrap py-4 pl-0 pr-3 align-top text-sm font-medium text-gray-900 sm:pl-6 md:pl-0">
+                    {{ if link }}
+                      <a href="{{ link }}" target="_blank" class="flex items-center hover:underline">
+                        {{ title }}
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          class="ml-1 h-3 w-3"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+                          />
+                        </svg>
+                      </a>
+                    {{ else }}
+                      {{ title }}
+                    {{ /if }}
                   </td>
                   <td class="whitespace-nowrap py-4 px-3 align-top text-sm text-gray-500">
                     {{ date_from format="d. M. 'y" }}

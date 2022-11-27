@@ -79,6 +79,7 @@ sections:
           options:
             meetup: Meetup
             conference: Conference
+            seminar: Seminar
           multiple: false
           clearable: false
           searchable: true
